@@ -1,0 +1,42 @@
+<html>
+	<head>
+	  <title>{{title}}</title>
+	<link rel="stylesheet" href="{{url_for('static',filename='styles/base_style.css')}}">
+	</head>
+	<body>
+		<div class="topnav">
+			<a class="active" href="/Myna/Index">Myna</a>
+			<a href="/Infra4D">Infra4D</a>
+			<a href="/Hornbill">Hornbill</a>
+			<a href="/GreenAnt">GreenAnt</a>
+			<a href="/TreeFlower">TreeFlower</a>
+			<a href="/EnggEcoSys">EngineeredEcoSystem</a>
+			{% if current_user.is_anonymous %}
+			<a href="/Myna/Login">Login</a>
+			{% else %}
+			<a href="/Myna/Logout">Logout</a>
+			{% endif %}
+		</div>
+	<div class="middlenav">
+	{% if current_user.is_anonymous %}
+	<a class="active" href="/Myna/Register">Register</a>
+	{% else %}
+	<a class="active" href="{{ url_for('user', username=current_user.username) }}">Profile</a>
+	<a href="{{ url_for('ProfileUpdate', username=current_user.username) }}">Update</a>
+	<a href="/Myna/Post">Post</a>
+	<a href="/Myna/Explore">Explore</a>
+	{% endif %}
+	</div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
+		{% block content %}
+		{% endblock %}
+	</body>
+</html>

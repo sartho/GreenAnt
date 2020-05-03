@@ -1,0 +1,1 @@
+from .ResizerIMG import IMGresizer

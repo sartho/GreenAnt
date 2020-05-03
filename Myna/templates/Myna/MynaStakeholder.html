@@ -1,0 +1,20 @@
+{% extends "Myna/MynaBase.html" %}
+
+{% block content %}
+
+ <div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="{{ user.avatar_img }}" alt="Avatar" style="width:150px;height:150px;">
+      {{ user.username }}
+    </div>
+    <div class="flip-card-back">
+        <p>User: {{ user.username }}</p>
+        <p>Email: {{ user.email }}</p>
+        <p>Stakeholder: {{ user.stakeholder }}</p>
+        <p>Last Seen: {{ user.last_seen }}</p>
+    </div>
+    
+  </div>
+</div> 
+{% endblock %}
