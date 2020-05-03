@@ -1,0 +1,98 @@
+2020-04-24 12:44:30,514 ERROR: Exception on /Myna/Post [GET] [in /home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.OperationalError: no such table: followers
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/sartho/Coding/Project/GreenAnt/Myna/routes.py", line 43, in post
+    posts = current_user.followed_posts().all()
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 3246, in all
+    return list(self)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 3405, in __iter__
+    return self._execute_and_instances(context)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/orm/query.py", line 3430, in _execute_and_instances
+    result = conn.execute(querycontext.statement, self._params)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 984, in execute
+    return meth(self, multiparams, params)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/sql/elements.py", line 293, in _execute_on_connection
+    return connection._execute_clauseelement(self, multiparams, params)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1103, in _execute_clauseelement
+    distilled_params,
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1288, in _execute_context
+    e, statement, parameters, cursor, context
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1482, in _handle_dbapi_exception
+    sqlalchemy_exception, with_traceback=exc_info[2], from_=e
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/util/compat.py", line 178, in raise_
+    raise exception
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/engine/base.py", line 1248, in _execute_context
+    cursor, statement, parameters, context
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/engine/default.py", line 590, in do_execute
+    cursor.execute(statement, parameters)
+sqlalchemy.exc.OperationalError: (sqlite3.OperationalError) no such table: followers
+[SQL: SELECT post.id AS post_id, post.body AS post_body, post.timestamp AS post_timestamp, post.user_id AS post_user_id 
+FROM post JOIN followers ON followers.followed_id = post.user_id 
+WHERE followers.follower_id = ? ORDER BY post.timestamp DESC]
+[parameters: (3,)]
+(Background on this error at: http://sqlalche.me/e/e3q8)
+2020-04-24 12:45:37,478 INFO: Myna startup [in /home/sartho/Coding/Project/GreenAnt/Myna/__init__.py:55]
+2020-04-24 12:45:54,720 ERROR: Exception on /Myna/Post [POST] [in /home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/sartho/Coding/Project/GreenAnt/Myna/routes.py", line 38, in post
+    post = Post(body=form.post.data, author=current_user.username)
+NameError: name 'Post' is not defined
+2020-04-24 12:47:34,179 INFO: Myna startup [in /home/sartho/Coding/Project/GreenAnt/Myna/__init__.py:55]
+2020-04-24 12:48:45,018 INFO: Myna startup [in /home/sartho/Coding/Project/GreenAnt/Myna/__init__.py:55]
+2020-04-24 12:49:01,629 INFO: Myna startup [in /home/sartho/Coding/Project/GreenAnt/Myna/__init__.py:55]
+2020-04-24 12:49:15,940 ERROR: Exception on /Myna/Post [POST] [in /home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py:1892]
+Traceback (most recent call last):
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 2447, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1952, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1821, in handle_user_exception
+    reraise(exc_type, exc_value, tb)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/_compat.py", line 39, in reraise
+    raise value
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1950, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask/app.py", line 1936, in dispatch_request
+    return self.view_functions[rule.endpoint](**req.view_args)
+  File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/flask_login/utils.py", line 272, in decorated_view
+    return func(*args, **kwargs)
+  File "/home/sartho/Coding/Project/GreenAnt/Myna/routes.py", line 38, in post
+    post = Post(body=form.post.data, author=current_user.username)
+NameError: name 'Post' is not defined
+2020-04-24 12:50:19,847 INFO: Myna startup [in /home/sartho/Coding/Project/GreenAnt/Myna/__init__.py:55]
