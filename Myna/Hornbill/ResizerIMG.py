@@ -80,13 +80,13 @@ class IMGresizer(object):
 		return image
 
 #arg=['admin.jpg','1.jpeg','2.png','3.jpeg','4.jpg','5.jpeg','6.jpg','7.jpeg']
-arg=['admin.jpg']
-IMG=IMGresizer(2000,'./static/DPs/',arg)
-dst=IMG.ResizeIMG('./static/DPs/'+arg[0])
+#arg=['admin.jpg']
+#IMG=IMGresizer(2000,'./static/DPs/',arg)
+#dst=IMG.ResizeIMG('./static/DPs/'+arg[0])
 
-est=IMG.CropIMG(IMG)
+#est=IMG.CropIMG(dst)
 
-cv2.namedWindow('img', cv2.WINDOW_NORMAL)
-cv2.imshow('img',est)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+#cv2.namedWindow('img', cv2.WINDOW_NORMAL)
+#cv2.imshow('img',est)
+#cv2.waitKey(0)
+#cv2.destroyAllWindows()

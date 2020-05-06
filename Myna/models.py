@@ -1,6 +1,6 @@
 from datetime import datetime
 from Myna import db
-from werkzeug.security import generate_password_hash, check_password_hash
+from werkzeug.security import generate_password_hash, check_password_hash, new_hash
 from Myna import login
 from flask_login import UserMixin
 from .Hornbill import IMGresizer

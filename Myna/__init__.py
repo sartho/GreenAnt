@@ -11,6 +11,8 @@ from logging.handlers import SMTPHandler
 from logging.handlers import RotatingFileHandler
 import os
 
+from flask_mongoengine import MongoEngine
+
 Myna = Flask(__name__)
 Myna.config.from_object(Config)
 
@@ -23,6 +25,11 @@ login.login_view = 'login'
 photos = UploadSet('photos', IMAGES)
 configure_uploads(Myna, photos)
 patch_request_class(Myna)  # set maximum file size, default is 16MB
+
+md = MongoEngine()
+
+from Myna.GreenAnt import gn as Green_Ant
+Myna.register_blueprint(Green_Ant,url_prefix='/Green_Ant')
 
 from Myna import routes
 

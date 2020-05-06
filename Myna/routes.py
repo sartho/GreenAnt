@@ -4,12 +4,9 @@ from flask_login import current_user, login_user,logout_user, login_required
 from Myna.models import User
 from flask import render_template, redirect, request, flash,url_for
 from werkzeug.urls import url_parse
-from Myna.forms import LoginToAvatar,CreateAvatar,UpdateAvatar,PostForm
+from Myna.forms import LoginToAvatar,CreateAvatar,UpdateAvatar
 from Myna import photos
 from datetime import datetime
-from .GreenAnts import forms, models
-from forms import PostForm
-from models import Ant, Post
 
 
 @Myna.route('/')

@@ -3,7 +3,7 @@ from wtforms import StringField, PasswordField, BooleanField, SubmitField
 from wtforms.validators import ValidationError, DataRequired, Email, EqualTo
 from wtforms import StringField, TextAreaField, SubmitField, SelectField, FieldList
 from wtforms.validators import DataRequired, Length
-from Myna.models import User,Post
+from Myna.models import User
 from Myna import photos
 from flask_wtf.file import FileField, FileRequired, FileAllowed
 
@@ -52,5 +52,3 @@ class LoginToAvatar(FlaskForm):
     password = PasswordField('Password', validators=[DataRequired()])
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Avatar Login')
-
-

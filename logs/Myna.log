@@ -74,3 +74,4 @@ Traceback (most recent call last):
   File "/home/sartho/Coding/Project/GreenAnt/sys/lib/python3.5/site-packages/sqlalchemy/orm/attributes.py", line 1450, in emit_backref_from_scalar_set_event
     instance_state(child),
 AttributeError: 'str' object has no attribute '_sa_instance_state'
+2020-05-05 16:48:56,410 INFO: Myna startup [in D:\GreenAnt\Myna\__init__.py:62]
